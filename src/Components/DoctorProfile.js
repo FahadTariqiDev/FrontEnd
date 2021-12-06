@@ -60,48 +60,60 @@ const DoctorProfile = () => {
   return (
     <>
       <div className="doctorProfile-container">
+        <div className="welcomMsg">
+          <h1>The Profile of Doctor: {doctor.name} </h1>
+        </div>
         <div className="doctorProfile-informion">
-          <h1>Hello: {doctorId}</h1>
           <h1>Doctor name: {doctor.name}</h1>
-          <h1>certificate date: {doctor.certificate_date}</h1>
           <h1>Hospilat name: {hospital.name}</h1>
           <h1>specialties: {specialties.specialtyName}</h1>
-          <h1>Rate: {doctor.total_rate}</h1>
+          <h1>certificate date: {doctor.certificate_date}</h1>
         </div>
-
-        {comment.map((e) => {
-          return <DisplayAllComment data={e} />;
-        })}
-
+        <div className="doctorProfile-comment">
+          <h1>Comments:</h1>
+          {comment.map((e) => {
+            return <DisplayAllComment data={e} />;
+          })}
+        </div>
         {/* <h1>Doctor name {doctor.sectionId.hospital.name}</h1> */}
 
         {/* <h1>Doctor name {comment.name}</h1> */}
 
         <div className="comment-form">
-          <label for="comment">comment:</label>
+          <label for="comment">Write your own opinion</label>
           <br />
+          <br />
+
           <input type="text" id="comment" name="comment" />
           <br />
           <label for="rate">Choose rate:</label>
-          <select name="rate" id="rate">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-          <input type="submit" value="Submit" onClick={add} />
+          <div className="select-doctorprofaile">
+            <select name="rate" id="rate">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button
+            className="commentbtn"
+            type="submit"
+            value="Submit"
+            onClick={add}
+          >
+            Submit
+          </button>
           <br></br>
         </div>
       </div>
       <br></br>
       <br></br>
-
     </>
   );
 };

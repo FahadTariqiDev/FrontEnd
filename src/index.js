@@ -18,7 +18,7 @@ ReactDOM.render(
     <Route path="/MainSearch" component={MainSearch}/>
     <Route path="/requests" component={GetRequest}/>
     <Route path="/adminpage" component={AdminPage}/>
-    {/* <Route path="/MainSearch" component={Login}/> */}
+    <Route path="/MainSearch" component={Login}/>
     {/* <Route path="/MainSearch" component={Signup}/> */}
    
    
